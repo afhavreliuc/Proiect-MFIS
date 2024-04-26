@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="6">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="6">
+        <org.eventb.core.poIdentifier name="infected" org.eventb.core.type="ℙ(infected)"/>
+        <org.eventb.core.poIdentifier name="recovered" org.eventb.core.type="ℙ(recovered)"/>
+        <org.eventb.core.poIdentifier name="recoveryRate" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="immunityLossRate" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="infectionRate" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Pandemie/contextVirus.bpo|org.eventb.core.poFile#contextVirus|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="6">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="infectionRate&gt;0" org.eventb.core.source="/Pandemie/contextVirus.buc|org.eventb.core.contextFile#contextVirus|org.eventb.core.axiom#5"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="recoveryRate&gt;0" org.eventb.core.source="/Pandemie/contextVirus.buc|org.eventb.core.contextFile#contextVirus|org.eventb.core.axiom#6"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="immunityLossRate&gt;0" org.eventb.core.source="/Pandemie/contextVirus.buc|org.eventb.core.contextFile#contextVirus|org.eventb.core.axiom#7"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="53">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="33">
+        <org.eventb.core.poIdentifier name="infected" org.eventb.core.type="ℙ(infected)"/>
+        <org.eventb.core.poIdentifier name="recovered" org.eventb.core.type="ℙ(recovered)"/>
+        <org.eventb.core.poIdentifier name="recoveryRate" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="immunityLossRate" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="infectionRate" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poPredicate name="immunityLossRatf" org.eventb.core.predicate="infectionRate&gt;0" org.eventb.core.source="/Pandemie/contextVirus.buc|org.eventb.core.contextFile#contextVirus|org.eventb.core.axiom#5"/>
+        <org.eventb.core.poPredicate name="immunityLossRatg" org.eventb.core.predicate="recoveryRate&gt;0" org.eventb.core.source="/Pandemie/contextVirus.buc|org.eventb.core.contextFile#contextVirus|org.eventb.core.axiom#6"/>
+        <org.eventb.core.poPredicate name="immunityLossRath" org.eventb.core.predicate="immunityLossRate&gt;0" org.eventb.core.source="/Pandemie/contextVirus.buc|org.eventb.core.contextFile#contextVirus|org.eventb.core.axiom#7"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="51">
+        <org.eventb.core.poIdentifier name="population_count" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="MAX" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="state" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="SUP" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="susceptible_count" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="infected_count" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="n1" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="recovered_count" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="inv1/THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Theorem" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ABSHYP"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="susceptible_count∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#+"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#+"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ABSHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTALLHYPsusceptible_counu"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="50∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#,"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#'"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#,"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poSequent#INITIALISATION\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTALLHYPsusceptible_counu"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="0∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#-"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#'"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#-"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poSequent#INITIALISATION\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTALLHYPsusceptible_counu"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="100∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#'"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poSequent#INITIALISATION\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTALLHYPsusceptible_counu"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="0∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#7"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#'"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#7"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poSequent#INITIALISATION\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTALLHYPsusceptible_counu"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="2∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#9"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#'"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#9"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poSequent#INITIALISATION\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTALLHYPsusceptible_counu"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="10∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#&gt;"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#'"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#&gt;"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poSequent#INITIALISATION\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTALLHYPsusceptible_counu"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="1∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#A"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#'"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#A"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poSequent#INITIALISATION\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTsusceptible_counu" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="51">
+        <org.eventb.core.poIdentifier name="infected_count'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="susceptible_count'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="population_count'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="SUP'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="n1'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="MAX'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="recovered_count'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="state'" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPsusceptible_counu" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTIDENTsusceptible_counu" org.eventb.core.poStamp="51"/>
+    <org.eventb.core.poSequent name="Infection/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTALLHYPsusceptible_counv"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="infected_count+1∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#,"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#0"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#,"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poSequent#Infection\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Infection/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTALLHYPsusceptible_counv"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="susceptible_count+infected_count+recovered_count∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#0"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poSequent#Infection\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Infection/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTALLHYPsusceptible_counv"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="n1+1∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#7"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#0"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#7"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poSequent#Infection\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTsusceptible_counv" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="51">
+        <org.eventb.core.poIdentifier name="infected_count'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="susceptible_count'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="population_count'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="n1'" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPsusceptible_counv" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTIDENTsusceptible_counv" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="susceptible_count&gt;0∧infected_count&gt;0∧n1&lt;SUP" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#0|org.eventb.core.guard#'"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Recovery/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTALLHYPsusceptible_counw"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="infected_count − 1∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#,"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#1"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#,"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poSequent#Recovery\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Recovery/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTALLHYPsusceptible_counw"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="recovered_count+1∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#-"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#1"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#-"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poSequent#Recovery\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Recovery/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTALLHYPsusceptible_counw"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="susceptible_count+infected_count+recovered_count∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#1"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poSequent#Recovery\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Recovery/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTALLHYPsusceptible_counw"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="0∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#7"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#1"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#7"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poSequent#Recovery\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTsusceptible_counw" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="51">
+        <org.eventb.core.poIdentifier name="infected_count'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="population_count'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="n1'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="recovered_count'" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPsusceptible_counw" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTIDENTsusceptible_counw" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="infected_count&gt;0" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#1|org.eventb.core.guard#'"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="LoseImmunity/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTALLHYPsusceptible_counx"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="recovered_count − 1∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#-"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#2"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#-"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poSequent#LoseImmunity\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="LoseImmunity/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTALLHYPsusceptible_counx"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="susceptible_count+infected_count+recovered_count∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#2"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poSequent#LoseImmunity\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTsusceptible_counx" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="51">
+        <org.eventb.core.poIdentifier name="susceptible_count'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="population_count'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="recovered_count'" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPsusceptible_counx" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTIDENTsusceptible_counx" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="recovered_count&gt;0" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#2|org.eventb.core.guard#'"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Death/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTALLHYPsusceptible_couny"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="infected_count − 1∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#,"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#5"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#,"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poSequent#Death\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Death/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTALLHYPsusceptible_couny"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="population_count − 1∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#5"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poSequent#Death\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTsusceptible_couny" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="51">
+        <org.eventb.core.poIdentifier name="infected_count'" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="population_count'" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPsusceptible_couny" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTIDENTsusceptible_couny" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="infected_count&gt;0" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#5|org.eventb.core.guard#'"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="InfectionRateRises/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="52">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTALLHYPsusceptible_counz"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="SUP+1∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#9"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#:"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#9"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poSequent#InfectionRateRises\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTsusceptible_counz" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="51">
+        <org.eventb.core.poIdentifier name="SUP'" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPsusceptible_counz" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTIDENTsusceptible_counz" org.eventb.core.poStamp="52">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="SUP&lt;MAX∧state&gt;0" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#:|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="InfectionRateLowers/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTALLHYPsusceptible_coun{"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="SUP − 1∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#9"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#?"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#9"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poSequent#InfectionRateLowers\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTsusceptible_coun{" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="51">
+        <org.eventb.core.poIdentifier name="SUP'" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPsusceptible_coun{" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTIDENTsusceptible_coun{" org.eventb.core.poStamp="51"/>
+    <org.eventb.core.poSequent name="ClosingEvent/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="53">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTALLHYPsusceptible_coun\|"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="state − 1∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#A"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#B"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#A"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poSequent#ClosingEvent\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTsusceptible_coun|" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="state'" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPsusceptible_coun|" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#EVTIDENTsusceptible_coun\|" org.eventb.core.poStamp="52">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="SUP&lt;1" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.event#B|org.eventb.core.guard#'"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Pandemie/Machine.bpo|org.eventb.core.poFile#Machine|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="51">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="susceptible_count∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#+"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="infected_count∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#,"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="recovered_count∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#-"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="population_count∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="n1∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#7"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="SUP∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#9"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="MAX∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#&gt;"/>
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="state∈ℕ" org.eventb.core.source="/Pandemie/Machine.bum|org.eventb.core.machineFile#Machine|org.eventb.core.invariant#A"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

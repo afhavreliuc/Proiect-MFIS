@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+    <org.eventb.core.carrierSet name=")" org.eventb.core.identifier="infected"/>
+    <org.eventb.core.carrierSet name="*" org.eventb.core.identifier="recovered"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="/" org.eventb.core.identifier="infectionRate"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="0" org.eventb.core.identifier="recoveryRate"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="1" org.eventb.core.identifier="immunityLossRate"/>
+    <org.eventb.core.axiom name="5" org.eventb.core.label="axm1" org.eventb.core.predicate="infectionRate &gt; 0"/>
+    <org.eventb.core.axiom name="6" org.eventb.core.label="axm2" org.eventb.core.predicate="recoveryRate &gt; 0"/>
+    <org.eventb.core.axiom name="7" org.eventb.core.label="axm3" org.eventb.core.predicate="immunityLossRate &gt; 0"/>
+</org.eventb.core.contextFile>

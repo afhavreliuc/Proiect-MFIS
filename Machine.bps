@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+    <org.eventb.core.psStatus name="inv1/THM" org.eventb.core.confidence="-99" org.eventb.core.poStamp="51" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="51" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="51" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="51" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="51" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="51" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="51" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="51" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Infection/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="51" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Infection/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="51" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Infection/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="51" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Recovery/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="51" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Recovery/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="51" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Recovery/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="51" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Recovery/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="51" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="LoseImmunity/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="51" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="LoseImmunity/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="51" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Death/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="51" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Death/inv4/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="51" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="InfectionRateRises/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="52" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="InfectionRateLowers/inv6/INV" org.eventb.core.confidence="-99" org.eventb.core.poStamp="51" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ClosingEvent/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="53" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>

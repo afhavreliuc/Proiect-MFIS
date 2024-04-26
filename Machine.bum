@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+    <org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="'" org.eventb.core.assignment="susceptible_count ≔ 100" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="(" org.eventb.core.assignment="infected_count ≔ 50" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name=")" org.eventb.core.assignment="recovered_count ≔ 0" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="*" org.eventb.core.assignment="population_count ≔ 100" org.eventb.core.label="act4"/>
+        <org.eventb.core.action name="+" org.eventb.core.assignment="n1 ≔ 0" org.eventb.core.label="act5"/>
+        <org.eventb.core.action name="," org.eventb.core.assignment="SUP ≔ 2" org.eventb.core.label="act6"/>
+        <org.eventb.core.action name="-" org.eventb.core.assignment="MAX ≔ 10" org.eventb.core.label="act7"/>
+        <org.eventb.core.action name="." org.eventb.core.assignment="state ≔ 1" org.eventb.core.label="act8"/>
+    </org.eventb.core.event>
+    <org.eventb.core.variable name="(" org.eventb.core.identifier="susceptible_count"/>
+    <org.eventb.core.variable name=")" org.eventb.core.identifier="infected_count"/>
+    <org.eventb.core.variable name="*" org.eventb.core.identifier="recovered_count"/>
+    <org.eventb.core.invariant name="+" org.eventb.core.label="inv1" org.eventb.core.predicate="susceptible_count ∈ ℕ" org.eventb.core.theorem="true"/>
+    <org.eventb.core.invariant name="," org.eventb.core.label="inv2" org.eventb.core.predicate="infected_count ∈ ℕ"/>
+    <org.eventb.core.invariant name="-" org.eventb.core.label="inv3" org.eventb.core.predicate="recovered_count ∈ ℕ"/>
+    <org.eventb.core.seesContext name="/" org.eventb.core.target="contextVirus"/>
+    <org.eventb.core.event name="0" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Infection">
+        <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="susceptible_count &gt; 0 ∧ infected_count &gt; 0 ∧ n1 &lt; SUP"/>
+        <org.eventb.core.action name="(" org.eventb.core.assignment="susceptible_count ≔ susceptible_count − 1" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name=")" org.eventb.core.assignment="infected_count ≔ infected_count + 1" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="*" org.eventb.core.assignment="population_count ≔ susceptible_count + infected_count + recovered_count" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="+" org.eventb.core.assignment="n1 ≔ n1 + 1" org.eventb.core.label="act4"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="1" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Recovery">
+        <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="infected_count &gt; 0"/>
+        <org.eventb.core.action name="(" org.eventb.core.assignment="infected_count ≔ infected_count − 1" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name=")" org.eventb.core.assignment="recovered_count ≔ recovered_count + 1" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="*" org.eventb.core.assignment="population_count ≔ susceptible_count + infected_count + recovered_count" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="+" org.eventb.core.assignment="n1 ≔ 0" org.eventb.core.label="act4"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="2" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="LoseImmunity">
+        <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="recovered_count  &gt; 0"/>
+        <org.eventb.core.action name="(" org.eventb.core.assignment="recovered_count ≔ recovered_count − 1" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name=")" org.eventb.core.assignment="susceptible_count ≔ susceptible_count + 1" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="*" org.eventb.core.assignment="population_count ≔ susceptible_count + infected_count + recovered_count" org.eventb.core.label="act3"/>
+    </org.eventb.core.event>
+    <org.eventb.core.variable name="3" org.eventb.core.identifier="population_count"/>
+    <org.eventb.core.invariant name="4" org.eventb.core.label="inv4" org.eventb.core.predicate="population_count ∈ ℕ"/>
+    <org.eventb.core.event name="5" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Death">
+        <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="infected_count &gt; 0"/>
+        <org.eventb.core.action name="(" org.eventb.core.assignment="infected_count ≔ infected_count − 1" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name=")" org.eventb.core.assignment="population_count ≔ population_count − 1" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.invariant name="7" org.eventb.core.label="inv5" org.eventb.core.predicate="n1 ∈ ℕ"/>
+    <org.eventb.core.variable name=";" org.eventb.core.identifier="n1"/>
+    <org.eventb.core.variable name="8" org.eventb.core.identifier="SUP"/>
+    <org.eventb.core.invariant name="9" org.eventb.core.label="inv6" org.eventb.core.predicate="SUP ∈ ℕ"/>
+    <org.eventb.core.event name=":" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="InfectionRateRises">
+        <org.eventb.core.action name="'" org.eventb.core.assignment="SUP ≔ SUP + 1" org.eventb.core.label="act1"/>
+        <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="SUP &lt; MAX ∧ state &gt; 0"/>
+    </org.eventb.core.event>
+    <org.eventb.core.variable name="=" org.eventb.core.identifier="MAX"/>
+    <org.eventb.core.invariant name="&gt;" org.eventb.core.label="inv7" org.eventb.core.predicate="MAX ∈ ℕ"/>
+    <org.eventb.core.event name="?" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="InfectionRateLowers">
+        <org.eventb.core.action name="'" org.eventb.core.assignment="SUP ≔ SUP − 1" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.variable name="@" org.eventb.core.identifier="state"/>
+    <org.eventb.core.invariant name="A" org.eventb.core.label="inv8" org.eventb.core.predicate="state ∈ ℕ"/>
+    <org.eventb.core.event name="B" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ClosingEvent">
+        <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="SUP &lt; 1"/>
+        <org.eventb.core.action name="(" org.eventb.core.assignment="state ≔ state − 1" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+</org.eventb.core.machineFile>
